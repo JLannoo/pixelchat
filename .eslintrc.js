@@ -33,5 +33,16 @@ module.exports = {
 			"error",
 			"always"
 		],
+		"object-curly-spacing": [
+			"error",
+			"always",
+		],
+		"array-bracket-spacing": [ 
+			"error",
+			"always",
+		],
+		"max-len": [
+			"never"
+		]
 	}
 };
