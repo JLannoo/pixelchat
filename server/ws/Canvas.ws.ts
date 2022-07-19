@@ -19,8 +19,20 @@ export function receivePixel(pixel: PixelMessage){
 }
 
 export function emitPixels(socket: Socket){
-    const pixels = JSON.parse(fs.readFileSync(PIXELS_PATH, "utf8"));
-    socket.emit("pixels", pixels);
+    const pixels = JSON.parse(fs.readFileSync(PIXELS_PATH, "utf8")) as PixelMessage[];
+
+    // Only emit the latest one in that position
+    const latestPixels = pixels.reverse().reduce((acc: PixelMessage[], pixel) => {
+        const accCoordinates = acc.map(a => ({x: a.x , y: a.y}))
+
+        if(!accCoordinates.find(a => a.x === pixel.x && a.y === pixel.y)){
+            acc.push(pixel);
+        }
+
+        return acc;
+    } , []);
+
+    socket.emit("pixels", latestPixels);
 }
 
 export function clearCanvas(){
