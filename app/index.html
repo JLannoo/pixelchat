@@ -17,6 +17,12 @@
         const socket = io();
     </script>
 
+    <section id="login" class="login">
+        <form action="/" method="post" class="login-inputs" id="login-form">
+            <input type="text" autocomplete="off" name="username" id="username" placeholder="Username" required>
+            <input type="submit" value="Use this username">
+        </form>
+    </section>
 
     <main>
         <input type="color" name="colorpicker" id="colorpicker" value="#ffffff">
@@ -24,9 +30,8 @@
 
     <section class="chat">
         <div class="messages"></div>
-        <form action="/" method="post" class="chat-inputs">
-            <input type="text" name="message" id="message" placeholder="Type a message...">
-            <input type="text" name="username" id="username" placeholder="Username">
+        <form action="/" method="post" class="chat-inputs" id="chat-form">
+            <input type="text" autocomplete="off" name="message" id="message" placeholder="Type a message...">
             <input type="submit" value="Send">
         </form>
     </section>
@@ -38,5 +43,6 @@
     <script src="./js/ws/Canvas.ws.js"></script>
 
     <script src="./js/canvas.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>

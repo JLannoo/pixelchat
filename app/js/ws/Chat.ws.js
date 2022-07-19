@@ -1,9 +1,13 @@
-const form = document.querySelector('form');
+const form = document.querySelector('#chat-form');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    
     const message = document.querySelector('#message').value;
-    const username = document.querySelector('#username').value;
+    document.querySelector('#message').value = '';
+
+    const username = localStorage.getItem('username');
+    if(!username) return;
 
     if(!message || !username) {
         alert("Fill all fields");

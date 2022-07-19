@@ -1,0 +1,29 @@
+const loginForm = document.querySelector('#login-form');
+
+function getUsernameFromCache(){
+    const username = localStorage.getItem('username');
+    return username;
+}
+
+function setLoginVisibility(){
+    const login = document.getElementById('login');
+    const username = getUsernameFromCache();
+    if(username){
+        login.style.display = 'none';
+    }
+}
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.querySelector('#username').value;
+    if(!username){
+        alert("Fill all fields");
+        return;
+    }
+
+    localStorage.setItem('username', username);
+    
+    setLoginVisibility();
+});
+
+setLoginVisibility();

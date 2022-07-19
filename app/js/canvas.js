@@ -22,7 +22,6 @@ function draw(){
  * @property {string} color
  * @property {string} username
  * 
- * 
  * Draws a pixel on the canvas
  * @param {Pixel} pixel 
  */
@@ -63,11 +62,8 @@ function mousePressed(){
         return;
     }
 
-    const username = document.querySelector('#username').value;
-
-    if(!username) {
-        alert("Fill all fields");
-    }
+    const username = localStorage.getItem('username');
+    if(!username) return;
 
     const x = Math.floor(mouseX / PIXEL_SIZE);
     const y = Math.floor(mouseY / PIXEL_SIZE);
