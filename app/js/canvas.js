@@ -7,7 +7,7 @@ const PIXEL_SIZE = CANVAS_SIZE / PIXEL_AMOUNT;
 function setup(){
     canvas = createCanvas(CANVAS_SIZE , CANVAS_SIZE);
     noStroke();
-    background(0);
+    background(255);
 }
 
 function draw(){
@@ -51,7 +51,7 @@ function drawPixels(pixels){
  * Clears the canvas
  */
 function clearCanvas(){
-    background(0);
+    background(255);
     redraw();
 }
 
@@ -71,7 +71,7 @@ function mousePressed(){
 
     const x = Math.floor(mouseX / PIXEL_SIZE);
     const y = Math.floor(mouseY / PIXEL_SIZE);
-    const color = "red";
+    const color = document.querySelector('#colorpicker').value;
 
     const pixel = {x, y, color, username};
 
