@@ -11,7 +11,8 @@ function setup(){
 }
 
 function draw(){
-    drawPixels();
+    background(255);
+    drawPixels(pixels);
     noLoop();
 }
 
@@ -28,6 +29,7 @@ function draw(){
 function drawPixel(pixel){
     fill(pixel.color);
     rect(pixel.x * PIXEL_SIZE, pixel.y * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
+    pixels.push(pixel);
     redraw();
 }
 
@@ -51,7 +53,7 @@ function drawPixels(pixels){
  */
 function clearCanvas(){
     background(255);
-    redraw();
+    pixels = [];
 }
 
 /**

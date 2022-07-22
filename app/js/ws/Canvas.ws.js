@@ -4,8 +4,9 @@ clearButton.addEventListener('click', (e) => {
     socket.emit('clear');
 });
 
+let pixels = [];
 socket.on('pixels', (data) => {
-    console.log(data);
+    pixels = data;
     drawPixels(data);
 });
 
