@@ -8,17 +8,20 @@
         integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" 
         crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
     <title>PixelChat</title>
 </head>
 <body>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const socket = io();
+        const socket = io(); 
     </script>
 
     <section id="login" class="login">
+        <img src="./assets/logo.svg" alt="PixelChat" class="logo">
         <form action="/" method="post" class="login-inputs" id="login-form">
+            <label for="username">Choose your username:</label>
             <input type="text" autocomplete="off" name="username" id="username" placeholder="Username" required>
             <input type="submit" value="Use this username">
         </form>
