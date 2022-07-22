@@ -16,6 +16,13 @@ form.addEventListener('submit', (e) => {
     socket.emit('message', { message , username });
 });
 
+window.addEventListener("load", () => {
+    const username = localStorage.getItem('username');
+    if(!username) return;
+
+    socket.emit('welcome', {username});
+});
+
 socket.on('message', (data) => {
     const messages = document.querySelector('.messages');
 
@@ -30,3 +37,16 @@ socket.on('message', (data) => {
     messages.appendChild(message);
     messages.scrollTo(0, messages.scrollHeight);
 });
+
+socket.on('welcome', (data) => {
+    console.log(data);
+    const messages = document.querySelector('.messages');
+
+    const message = document.createElement('p');
+    message.innerText = data;
+    message.classList.add('message');
+    message.classList.add('welcome');
+
+    messages.appendChild(message);
+    messages.scrollTo(0, messages.scrollHeight);
+})

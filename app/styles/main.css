@@ -236,9 +236,15 @@ body {
 .chat > .messages > .message {
     animation: appear-chat-messages 0.2s linear forwards;
     margin: 0.25rem 0;
+    width: 100%;
     max-width: 100%;
 
-    line-break: anywhere;
+    word-wrap: break-word;
+}
+.welcome{
+    font-weight: 900;
+    color: #aaa;
+
 }
 
 

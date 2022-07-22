@@ -31,6 +31,7 @@ loginForm.addEventListener('submit', (e) => {
     localStorage.setItem('username', username);
     
     setLoginVisibility();
+    socket.emit('welcome', { username });
 });
 
 setLoginVisibility();

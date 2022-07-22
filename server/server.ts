@@ -8,14 +8,12 @@ const server = http.createServer(app);
 import { Server } from "socket.io";
 export const io = new Server(server);
 
-import { emitMessage } from "./ws/Chat.ws";
+import { emitMessage , emitWelcome } from "./ws/Chat.ws";
 import { clearCanvas, emitPixels, receivePixel } from "./ws/Canvas.ws";
 
 app.use("/", express.static(path.join(__dirname, "../app")));
 
 io.on("connection", (socket) => {
-	console.log("a user connected");
-
 	// send message to newly connected user
 	emitPixels(socket);
 	
@@ -23,6 +21,7 @@ io.on("connection", (socket) => {
 		console.log("user disconnected");
 	});
 
+	socket.on("welcome" , emitWelcome);
 	socket.on("message" , emitMessage);
 	socket.on("pixel", receivePixel);
 	socket.on("clear", clearCanvas);
