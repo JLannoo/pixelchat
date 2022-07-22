@@ -28,6 +28,9 @@ io.on("connection", (socket) => {
 	socket.on("clear", clearCanvas);
 });
 
-server.listen(3000, () => {
-	console.log("listening on http://localhost:3000");
+const URL = process.env.RAILWAY_ENVIRONMENT === "production" ? `https://${process.env.RAILWAY_STATIC_URL}` : "http://localhost";
+const PORT = process.env.RAILWAY_ENVIRONMENT === "production" ? process.env.PORT : 3000;
+
+server.listen(PORT, () => {
+	console.log(`listening on port ${URL}:${PORT}`);
 });
