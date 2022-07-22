@@ -18,7 +18,15 @@ form.addEventListener('submit', (e) => {
 
 socket.on('message', (data) => {
     const messages = document.querySelector('.messages');
-    const p = document.createElement('p');
-    p.innerHTML = `<strong>${data.username}:</strong> ${data.message}`;
-    messages.appendChild(p);
+
+    const message = document.createElement('p');
+    const username = document.createElement("strong");
+    username.innerText = `${data.username}: `;
+    message.appendChild(username);
+
+    message.appendChild(document.createTextNode(data.message));
+    message.classList.add('message');
+
+    messages.appendChild(message);
+    messages.scrollTo(0, messages.scrollHeight);
 });
