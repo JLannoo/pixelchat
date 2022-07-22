@@ -60,6 +60,8 @@ function clearCanvas(){
  * Monitors mouse presses
  */
 function mousePressed(){
+    if(mouseButton !== LEFT) return;
+
     if(mouseX < 0 || mouseX > CANVAS_SIZE || mouseY < 0 || mouseY > CANVAS_SIZE){
         return;
     }

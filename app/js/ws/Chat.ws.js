@@ -10,7 +10,7 @@ form.addEventListener('submit', (e) => {
     if(!username) return;
 
     if(!message || !username) {
-        alert("Fill all fields");
+        return alert("Fill all fields");
     }
 
     socket.emit('message', { message , username });
