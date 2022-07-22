@@ -6,10 +6,17 @@ function getUsernameFromCache(){
 }
 
 function setLoginVisibility(){
-    const login = document.getElementById('login');
+    const login = document.querySelector('#login');
+    const main = document.querySelector('.main');
+
     const username = getUsernameFromCache();
+
     if(username){
         login.style.display = 'none';
+        main.style.display = 'flex';
+    } else {
+        login.style.display = 'flex';
+        main.style.display = 'none';
     }
 }
 
