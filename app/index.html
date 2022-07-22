@@ -24,19 +24,42 @@
         </form>
     </section>
 
-    <main>
-        <input type="color" name="colorpicker" id="colorpicker" value="#ffffff">
-    </main>
+    <section class="main">
+        <div class="drawing-container">
+            <div class="options-container">
+                <div class="colorpicker-container">
+                    <div class="swatches">
+                        <button data-color="#ff0000" class="swatch"></button>
+                        <button data-color="#f58400" class="swatch"></button>
+                        <button data-color="#0500ff" class="swatch"></button>
+                        <button data-color="#00a3ff" class="swatch"></button>
+                        <button data-color="#00ff57" class="swatch"></button>
+                        <button data-color="#c5ff49" class="swatch"></button>
+                        <button data-color="#faff00" class="swatch"></button>
+                        <button data-color="#fffb8f" class="swatch"></button>
+                        <button data-color="#ffffff" class="swatch"></button>
+                        <button data-color="#000000" class="swatch"></button>
+                        <button data-color="#b3b3b3" class="swatch"></button>
+                        <button data-color="#646464" class="swatch"></button>
+                    </div>
+                    <input type="color" name="colorpicker" id="colorpicker" value="#ffffff" class="colorpicker">
+                </div>
+                <button id="clear-button" class="button">Clear</button>
+            </div>
+            <main class="canvas-container">
+            </main>
+        </div>
 
-    <section class="chat">
-        <div class="messages"></div>
-        <form action="/" method="post" class="chat-inputs" id="chat-form">
-            <input type="text" autocomplete="off" name="message" id="message" placeholder="Type a message...">
-            <input type="submit" value="Send">
-        </form>
+        <section class="chat">
+            <div class="messages"></div>
+
+            <form action="/" method="post" id="chat-form">
+                <input type="text" autocomplete="off" name="message" id="message" placeholder="Type a message...">
+                <input type="submit" value="Send" class="button">
+            </form>
+        </section>
+        
     </section>
-
-    <button id="clear-button">Clear</button>
 
 
     <script src="./js/ws/Chat.ws.js"></script>

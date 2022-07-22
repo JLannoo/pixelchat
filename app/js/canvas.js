@@ -77,3 +77,11 @@ function mousePressed(){
 
     sendPixel(pixel);
 }
+
+const swatches = document.querySelectorAll('.swatch');
+for(const swatch of swatches){
+    swatch.style.backgroundColor = swatch.dataset.color;
+    swatch.addEventListener('click', (e) => {
+        document.querySelector('#colorpicker').value = e.target.dataset.color;
+    });
+}
