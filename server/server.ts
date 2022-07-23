@@ -13,6 +13,11 @@ import { clearCanvas, emitPixels, receivePixel } from "./ws/Canvas.ws";
 
 app.use("/", express.static(path.join(__dirname, "../app")));
 
+import { serveHeatMap } from "./heatmap";
+app.get("/heatmap", (req, res) => {
+	serveHeatMap(req, res);
+});
+
 io.on("connection", (socket) => {
 	// send message to newly connected user
 	emitPixels(socket);
