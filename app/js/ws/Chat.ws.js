@@ -39,7 +39,6 @@ socket.on('message', (data) => {
 });
 
 socket.on('welcome', (data) => {
-    console.log(data);
     const messages = document.querySelector('.messages');
 
     const message = document.createElement('p');

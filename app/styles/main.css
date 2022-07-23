@@ -220,12 +220,67 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
+    .drawing-container {
+        flex-direction: column-reverse;
+
+        width: 100%;
+        max-width: 100%;
+
+        padding: 0.5rem;
+        box-sizing: border-box;        
+    }
+
+    .options-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        padding: 0.5rem;
+        padding-bottom: 0;
+        margin: 0;
+
+        gap: 1rem;
+    }
+    #clear-button {
+        margin: 0;
+    }
+
+    .chat {
+        min-width: 40%;
+    }
+
+    .colorpicker-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .swatches {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
     .main {
         flex-direction: column;
     }
 
-    .chat > .messages {
+    .drawing-container {
+        height: auto;
+        min-height: auto;
+        max-height: 60%;
+    }
+
+    .canvas-container {
+        max-height: 87.5%;
+    }
+
+    .options-container {
+        min-height: max-content;
+    }
+
+    .chat {
         width: 100%;
+        max-height: 50%;
     }
 }
 
