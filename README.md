@@ -3,6 +3,7 @@
   <img src="/app/assets/logo.svg" />
   <br>
   <q align="center"> Join your creativity with others and create while you have a nice chat! </q>
+  <br>
   <q align="center"> We all know you are going to draw dicks. Just go ahead and do it. </q>
 </div>
 
