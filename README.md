@@ -2,7 +2,8 @@
   <h1> PixelChat </h1>
   <img src="/app/assets/logo.svg" />
   <br>
-  <q align="center"> Join your creativity with other and create with other while you have a nice chat! </q>
+  <q align="center"> Join your creativity with others and create while you have a nice chat! </q>
+  <q align="center"> We all know you are going to draw dicks. Just go ahead and do it. </q>
 </div>
 
 ## Description
