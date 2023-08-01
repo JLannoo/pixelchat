@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "ts-node-dev ./server/server.ts"
+    "server": "ts-node-dev ./server/server.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
