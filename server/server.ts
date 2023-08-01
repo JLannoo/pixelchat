@@ -8,9 +8,20 @@ const server = http.createServer(app);
 import { Server } from "socket.io";
 export const io = new Server(server);
 
+// Instantiate json file
+import fs from "fs";
+
+if(!fs.existsSync(path.join(__dirname, "./storage/pixels.json"))) {
+	// Create directory and file inside it
+	fs.mkdirSync(path.join(__dirname, "./storage"));
+	fs.writeFileSync(path.join(__dirname, "./storage/pixels.json"), "[]");
+}
+
+// Import WS functions
 import { emitMessage , emitWelcome } from "./ws/Chat.ws";
 import { clearCanvas, emitPixels, receivePixel } from "./ws/Canvas.ws";
 
+// Declare public
 app.use("/", express.static(path.join(__dirname, "../app")));
 
 import { serveHeatMap } from "./heatmap";
